@@ -30,6 +30,10 @@ RUN ${KLIPPER_VENV_DIR}/bin/python -m pip install pip -U
 RUN ${KLIPPER_VENV_DIR}/bin/pip install wheel
 RUN ${KLIPPER_VENV_DIR}/bin/pip install -r klipper/scripts/klippy-requirements.txt
 
+# Install z calibration
+RUN git clone --single-branch --branch ${KLIPPER_BRANCH} https://github.com/protoloft/klipper_z_calibration.git z_calibration
+RUN mv z_calibration/z_calibration.py klipper/klippy/extras/
+
 # Install moonraker
 RUN git clone --single-branch --branch ${MOONRAKER_BRANCH} https://github.com/Arksine/moonraker.git moonraker
 RUN [ ! -d ${MOONRAKER_VENV_DIR} ] && python3 -m venv ${MOONRAKER_VENV_DIR}
