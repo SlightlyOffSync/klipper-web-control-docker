@@ -22,7 +22,7 @@ services:
     # mount serial device - take care to grant sufficient permissions to the device: <host_dev>:<container_dev>
     # put <container_dev> into your printer.cfg
     devices:
-      - /dev/serial/by-id/usb-Klipper_stm32f446xx_24002D001851303439363932-if00:/dev/ttyUSB0
+      - /dev/serial/by-id/usb-Klipper_stm32f446xx_43005F001851303439363932-if00:/dev/ttyUSB0
 
   ##################################################################
   # Example config for a second printer on a different serial port
